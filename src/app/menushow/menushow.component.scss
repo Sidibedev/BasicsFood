@@ -1,0 +1,127 @@
+/**
+ * Computes a CSS calc function that betweens a value from
+ * A to B over viewport-width A to viewport-width B.
+ * Requires a media query to cap the value at B.
+ */
+
+ @function between($to, $from, $toWidth, $fromWidth) {
+    $slope: ($to - $from) / ($toWidth - $fromWidth);
+    $base: $from - $slope * $fromWidth;
+  
+    @return calc(#{$base}px + #{100vw * $slope});
+  }
+  .container {
+      max-width: 980px;
+      margin: auto;
+  }
+
+  .restaurant-menu {
+      $b: &;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      margin : 20px 20px 20px 20px;
+      padding: 10px 10px 10px 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      margin-top: 50px;
+      padding: 15px;
+      padding-top: 30px;
+      overflow: hidden;
+      @media (max-width: 767px) {
+          padding-top: between(15, 30, 575, 768);
+      }
+      @media (max-width: 575px) {
+          padding-top: 15px;
+      }
+      &__header {
+          text-align: center;
+          margin-bottom: 80px;
+          @media (max-width: 767px) {
+              margin-bottom: between(30, 80, 575, 768);
+          }
+          @media (max-width: 575px) {
+              margin-bottom: 30px;
+          }
+      }
+      &__title {
+          font-size: 30px;
+          
+          margin: 0;
+          display: inline-block;
+          position: relative;
+          &:after {
+              content: "";
+              position: absolute;
+              bottom: 0px;
+              width: 120%;
+              left: 50%;
+              transform: translateX(-50%);
+             
+          }
+          @media (max-width: 575px) {
+              font-size: 25px;
+          }
+      }
+      &__items {
+  
+      }
+      &__item {
+          display: flex;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          padding-left: 15px;
+          padding-right: 15px;
+          @media (max-width: 767px) {
+              padding-left: between(0, 15, 575, 767);
+              padding-right: between(0, 15, 575, 767);
+          }
+          @media (max-width: 575px) {
+              padding-left: 0;
+              padding-right: 0;
+          }
+      }
+      &__item-media {
+          margin-right: 15px;
+          @media (max-width: 575px) {
+              display: none;
+          }
+      }
+      &__item-info {
+          flex: auto;
+      }
+      &__item-title {
+          position: relative;
+          margin: 0;
+          font-size: 22px;
+      }
+      &__item-name {
+          
+          z-index: 1;
+          position: relative;
+      }
+      &__item-dots {
+      height: 3px;
+          display: block;
+          position: absolute;
+          width: 100%;
+          bottom: 5px;
+            background-image: radial-gradient(circle closest-side,#ccc 80%,#fff 10%);
+            background-position: bottom;
+            background-position-x: center;
+            background-position-y: bottom;
+            background-size: 4px 2px;
+            background-repeat: repeat-x;
+      }
+      &__item-price {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        
+      }
+      &__item-description {
+          font-size: 12px;
+         
+         
+      }
+    
+  }

@@ -1,0 +1,94 @@
+
+
+<div class="wrapper">
+    <div class="page-header page-header-small" filter-color="orange">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/team.png') ;">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <div class="photo-container">
+                    <img src="assets/img/ryan.jpg" alt="">
+                </div>
+                
+                <h3 class="title"  style="font-family:Comfortaa">Mohamed Sidibe</h3>
+                
+               
+            </div>
+        </div>
+    </div>
+    <div class="section" data-background-color="black">
+        <div class="container">
+          <!-- <div class="button-container">
+              <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
+              <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
+                  <i class="fa fa-twitter"></i>
+              </a>
+              <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
+                  <i class="fa fa-instagram"></i>
+              </a>
+          </div> -->
+          <h3 class="title" style="font-family:Comfortaa">Ajouter un nouveau menu</h3>
+          
+            <div class="row">
+                <div class="col-md-12">
+                        <form class="form" method="" action="">
+                                
+                                <div class="content">
+                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+                                   
+                                      <input type="text" class="form-control" placeholder="Nom du plat..." (focus)="focus=true" (blur)="focus=false" >
+                                  </div>
+
+
+                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                                    
+                                      <input type="text" placeholder="Prix du plat..." class="form-control" (focus)="focus1=true" (blur)="focus1=false"/>
+                                  </div>
+
+                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                                       
+                                          <input type="text" placeholder="Une photo..." class="form-control" (focus)="focus1=true" (blur)="focus1=false"/>
+                                  </div>
+
+                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                                    
+                                             <select class="form-control" (focus)="focus1=true" (blur)="focus1=false">
+                                                <option value="0">Type plat</option>
+                                                <option value="volvo">Volvo</option>
+                                                <option value="saab">Saab</option>
+                                                <option value="mercedes">Mercedes</option>
+                                                <option value="audi">Audi</option>
+                                              </select>
+                                  </div>
+
+                                  
+                                        
+                                        <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Mettez une belle description du plat"></textarea>
+                        
+                                  
+                                </div>
+                                <div class="footer text-center">
+                                    <a href="#pablo" class="btn btn-danger btn-round btn-lg">Connexion</a>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <p style="font-family:Comfortaa">
+                                        <a href="#pablo" class="link">Nouveau type plat ?</a>
+                                    </p>
+                                </div>
+                            </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer data-background-color="black" class="footer">
+            <div class="container">
+                
+                <div class="copyright">
+                    &copy;
+                  {{data | date: 'yyyy'}},  Coded by
+                    <a href="https://www.creative-tim.com" target="_blank">Basics</a>.
+                </div>
+            </div>
+        </footer>
+</div>

@@ -1,0 +1,130 @@
+<div  class="section" data-background-color="black">
+
+   <div class="container" style="display:block">
+   <h3>
+     Les données sont le futur
+   </h3>
+
+    <div class="row">
+      <div class="col-md-6">
+          <canvas *ngIf="ready" baseChart 
+          [datasets]="barChartData" 
+          [labels]="barChartLabels" 
+          [options]="barChartOptions" 
+          [legend] = "barChartLegend"
+          [colors]="lineChartColors"
+          [chartType] = "barChartType">
+      
+          </canvas>
+
+      </div>
+      <div class="col-md-6">
+          <canvas *ngIf="ready" baseChart 
+          [datasets]="prixChartData" 
+          [labels]="prixChartLabels" 
+          [options]="barChartOptions" 
+          [legend] = "barChartLegend"
+          
+          [chartType] = "barChartType">
+      
+          </canvas>
+
+      </div>
+    </div>
+   
+   </div>
+   <br><br><br>
+<hr>
+   <br><br><br>
+   <div class="container" style="display:block">
+   
+    <div class="row">
+        <div class="col-md-6">
+            <canvas *ngIf="ready" baseChart 
+            [datasets]="barChartData" 
+            [labels]="barChartLabels" 
+            [options]="barChartOptions" 
+            [legend] = "barChartLegend"
+            [colors]="lineChartColors"
+            chartType = "bar">
+        
+            </canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas *ngIf="ready" baseChart 
+            [datasets]="prixChartData" 
+            [labels]="prixChartLabels" 
+            [options]="barChartOptions" 
+            [legend] = "barChartLegend"
+            
+            chartType = "bar">
+        
+            </canvas>
+        </div>
+    </div>
+    
+   </div>
+   <br><br><br>
+<hr>
+   <br><br><br>
+   <div class="container" style="display:block">
+    
+    <div class="row">
+        <div class="col-md-6">
+            <canvas *ngIf="ready" baseChart 
+            [datasets]="barChartData" 
+            [labels]="barChartLabels" 
+            [options]="barChartOptions" 
+            [legend] = "barChartLegend"
+           
+            chartType = "pie">
+        
+            </canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas *ngIf="ready" baseChart 
+            [datasets]="prixChartData" 
+          [labels]="prixChartLabels"  
+            [options]="barChartOptions" 
+            [legend] = "barChartLegend"
+           
+            chartType = "pie">
+        
+            </canvas>
+        </div>
+    </div>
+    
+   </div>
+   <br><br><br>
+<hr>
+   <br><br><br>
+   <div class="container" style="display:block">
+   
+    <div class="row">
+        <div class="col-md-6">
+            <canvas *ngIf="ready" baseChart 
+            [datasets]="barChartData" 
+            [labels]="barChartLabels" 
+            [options]="barChartOptions" 
+            [legend] = "barChartLegend"
+           
+            chartType = "doughnut">
+        
+            </canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas *ngIf="ready" baseChart 
+            [datasets]="prixChartData" 
+          [labels]="prixChartLabels" 
+            [options]="barChartOptions" 
+            [legend] = "barChartLegend"
+           
+            chartType = "doughnut">
+        
+            </canvas>
+        </div>
+    </div>
+   </div>
+    
+
+</div>

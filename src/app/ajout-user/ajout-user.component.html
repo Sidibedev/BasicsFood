@@ -1,0 +1,76 @@
+
+
+<div class="wrapper">
+    <div class="page-header page-header-small" filter-color="orange">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/team.png') ;">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <div class="photo-container">
+                    <img src="assets/img/cherries.png" alt="">
+                </div>
+                <br>
+                <h3 class="title"  style="font-family:Comfortaa">Basics Food</h3>
+                
+               
+            </div>
+        </div>
+    </div>
+    <div class="section" data-background-color="black">
+        <div class="container">
+          <!-- <div class="button-container">
+              <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
+              <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
+                  <i class="fa fa-twitter"></i>
+              </a>
+              <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
+                  <i class="fa fa-instagram"></i>
+              </a>
+          </div> -->
+          <h3 class="title" style="font-family:Comfortaa">Ajouter un nouvel utilisateur</h3>
+          
+            <div class="row">
+                <div class="col-md-12">
+                        <form class="form"[formGroup]="TypeForm" class="form" (ngSubmit)="onSubmitForm()">
+                                
+                                <div class="content">
+                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+                                   
+                                      <input required formControlName="username" type="text" class="form-control" placeholder="* Usename..." (focus)="focus=true" (blur)="focus=false" >
+                                  </div>
+                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+                                   
+                                      <input required formControlName="password" type="password" class="form-control" placeholder="* Password..." (focus)="focus=true" (blur)="focus=false" >
+                                  </div>
+                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+                                   
+                                        <input required formControlName="confirpasswrod" type="password" class="form-control" placeholder="* Confirmer le password..." (focus)="focus=true" (blur)="focus=false" >
+                                    </div>
+
+
+
+                      
+                                   
+                                  
+                                </div>
+                                <div class="footer text-center">
+                                    <input [disabled]="TypeForm.invalid" type="submit" class="btn btn-danger btn-round btn-lg" value="Ajouter">
+                                </div>
+                                
+                               
+                            </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer data-background-color="black" class="footer">
+            <div class="container">
+                
+                <div class="copyright">
+                    &copy;
+                  {{data | date: 'yyyy'}},  Coded by
+                    <a href="https://www.creative-tim.com" target="_blank">Basics</a>.
+                </div>
+            </div>
+        </footer>
+</div>

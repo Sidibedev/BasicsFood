@@ -1,0 +1,39 @@
+<div class="section" data-background-color="black">
+    <div class="container">
+ 
+
+      	<div class="restaurant-menu">
+            <div class="restaurant-menu__header">
+              <h3 class="restaurant-menu__title">Menu</h3><br>
+              <h3 class="restaurant-menu__title" style="font-weight:bold ; color: #FF3636">Basics Food</h3>
+            </div>
+            <div class="restaurant-menu__items">
+              <div class="restaurant-menu__item" *ngFor = "let menu of menus">
+                <div class="restaurant-menu__item-media">
+                  <img src="{{menu.photo}}" alt="">
+                </div>
+                <div class="restaurant-menu__item-info">
+                  <h4 class="restaurant-menu__item-title">
+                    <span class="restaurant-menu__item-name" style="font-weight:bold">
+                      {{menu.plat}}
+                    </span>
+                   
+                    <span class="restaurant-menu__item-price" style="font-weight:bold;color: #FF3636"> {{menu.prix}} Fcfa </span>
+                  </h4>
+                  <p class="resaurant-menu__description" style="font-style: italic"> {{menu.typePlat.nom}}</p>
+                  <p class="resaurant-menu__description"> {{menu.desc}}</p>
+
+                  
+                </div>
+              </div>
+              
+             
+            </div>
+          </div>
+      
+
+     
+   
+      
+    </div>
+    </div>

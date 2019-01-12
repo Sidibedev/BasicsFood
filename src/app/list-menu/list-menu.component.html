@@ -1,0 +1,89 @@
+
+
+<div class="wrapper">
+    <div class="page-header page-header-small" filter-color="orange">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/team.png') ;">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <div class="photo-container">
+                    <img src="assets/img/cherries.png" alt="">
+                </div>
+                <br>
+                <h3 class="title"  style="font-family:Comfortaa">Basics Food</h3>
+                
+               
+            </div>
+        </div>
+    </div>
+    <div class="section" data-background-color="black">
+        <div class="container">
+          <!-- <div class="button-container">
+              <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
+              <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
+                  <i class="fa fa-twitter"></i>
+              </a>
+              <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
+                  <i class="fa fa-instagram"></i>
+              </a>
+          </div> -->
+          <h3 class="title" style="font-family:Comfortaa">Liste des menus </h3>
+          <div class="text-right" style="margin-bottom:10px;">
+              <button routerLink="/ajoutmenu" type="button" class="btn btn-danger">Ajouter nouveau menu</button> 
+          </div>
+          <p *ngIf="empty == true"> Vous n'avez pas encore de plats dans votre menu <br> Appuyer sur le button pour ajouter</p>
+       
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table" *ngIf="empty == false">
+                        <thead class="thead-dark">
+                          <tr>
+                           
+                            <th scope="col">Nom du plat</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Type plat</th>
+                            <th scope="col">Photo</th>
+                            
+                             <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                                <tr *ngFor = "let menu of menus">
+                        
+                                        <td style="font-family:Comfortaa">
+                                              <h3>{{menu.plat}}</h3>
+                                        </td>
+                                        <td style="font-family:Comfortaa">
+                                                <h3>{{menu.prix}} Fcfa</h3>
+                                        </td>
+                                        <td style="font-family:Comfortaa">
+                                                <h3>{{menu.typePlat.nom}}</h3>
+                                        </td>
+                                        <td >
+                                              <img style="width:60px; height:50px" src="{{menu.photo}}" alt="">
+                                        </td>
+                                        <th style="font-family:Comfortaa" scope="col">
+                                            <button routerLink="/editMenu/{{menu._id}}"  type="button" class="btn btn-info">Modifier</button> 
+                                            <button (click)="delete(menu._id)" type="button" class="btn btn-danger">Supprimer</button> 
+                                        </th>
+                                        
+                                      </tr>
+                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer data-background-color="black" class="footer">
+            <div class="container">
+                
+                <div class="copyright">
+                    &copy;
+                  {{data | date: 'yyyy'}},  Coded by
+                    <a href="https://www.creative-tim.com" target="_blank">Basics</a>.
+                </div>
+            </div>
+        </footer>
+</div>
