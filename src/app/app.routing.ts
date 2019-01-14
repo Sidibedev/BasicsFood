@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components/components.component';
 import { LandingComponent } from './examples/landing/landing.component';
-import { LoginComponent } from './examples/login/login.component';
+import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './examples/profile/profile.component';
 import {AjoutMenuComponent} from './ajout-menu/ajout-menu.component'
 import {AjoutTypePlatComponent} from './ajout-type-plat/ajout-type-plat.component'
@@ -20,6 +20,8 @@ import {EditMenuComponent} from './edit-menu/edit-menu.component'
 import {MenushowComponent} from './menushow/menushow.component'
 import {StatsComponent} from './stats/stats.component'
 import {NotfoundComponent} from './notfound/notfound.component'
+
+import { AuthGuard } from './auth.guard';
 const routes: Routes =[
     { path: '', redirectTo: 'index', pathMatch: 'full' },
     { path: 'index',                component: ComponentsComponent },
@@ -27,17 +29,18 @@ const routes: Routes =[
     { path: 'membres',     component: LandingComponent },
     { path: 'login',       component: LoginComponent },
     { path: 'profile',     component: ProfileComponent },
-    { path: 'ajoutmenu',     component: AjoutMenuComponent },
-    { path: 'ajoutuser',     component: AjoutUserComponent },
-    { path: 'ajoutypeplat',     component: AjoutTypePlatComponent },
-    { path: 'editType/:id',     component: EditTypeComponent },
-    { path: 'editUser/:id',     component: EditUserComponent },
-    { path: 'editMenu/:id',     component: EditMenuComponent },
-    { path: 'listmenu',     component: ListMenuComponent },
-    { path: 'listuser',     component: ListUserComponent },
-    { path: 'showmenu',     component: MenushowComponent },
-    { path: 'listtypeplat',     component: ListTypePlatComponent },
-    { path: 'stats',     component: StatsComponent },
+    { path: 'ajoutmenu',  canActivate: [AuthGuard],   component: AjoutMenuComponent },
+    { path: 'ajoutuser',  canActivate: [AuthGuard],    component: AjoutUserComponent },
+    { path: 'ajoutypeplat',  canActivate: [AuthGuard],    component: AjoutTypePlatComponent },
+    { path: 'editType/:id',  canActivate: [AuthGuard],     component: EditTypeComponent },
+    { path: 'editUser/:id', canActivate: [AuthGuard],     component: EditUserComponent },
+    { path: 'editMenu/:id', canActivate: [AuthGuard],     component: EditMenuComponent },
+    { path: 'listmenu', canActivate: [AuthGuard],     component: ListMenuComponent },
+    { path: 'listuser', canActivate: [AuthGuard],     component: ListUserComponent },
+    { path: 'showmenu',    component: MenushowComponent },
+    { path: 'listtypeplat',  canActivate: [AuthGuard],    component: ListTypePlatComponent },
+    { path: 'stats',  canActivate: [AuthGuard],    component: StatsComponent },
+  
     { path: 'notfound',     component: NotfoundComponent },
     {
         path: '**',

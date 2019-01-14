@@ -5,7 +5,7 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JWBootstrapSwitchModule } from 'jw-bootstrap-switch-ng2';
 import { AgmCoreModule } from '@agm/core';
-
+import {  ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -15,6 +15,7 @@ import { ExamplesComponent } from './examples.component';
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         NgbModule,
         NouisliderModule,
         JWBootstrapSwitchModule,

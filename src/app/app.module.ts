@@ -23,7 +23,8 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { MenushowComponent } from './menushow/menushow.component';
 import { StatsComponent } from './stats/stats.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-
+import {LoginComponent} from './login/login.component'
+import {AuthGuard} from './auth.guard'
 @NgModule({
     declarations: [
         AppComponent,
@@ -39,7 +40,9 @@ import { NotfoundComponent } from './notfound/notfound.component';
         EditMenuComponent,
         MenushowComponent,
         StatsComponent,
-        NotfoundComponent
+        NotfoundComponent,
+        LoginComponent
+
     ],
     imports: [
         BrowserAnimationsModule,
@@ -54,7 +57,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
         ChartsModule,
         
     ],
-    providers: [DataServiceService],
+    providers: [DataServiceService , AuthGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

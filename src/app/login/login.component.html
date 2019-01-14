@@ -31,7 +31,7 @@
                             <input [disabled]="TypeForm.invalid" type="submit" class="btn btn-danger btn-round btn-lg" value="Connexion">
                     </div>
                     
-                    
+                    <p *ngIf="authenticated == false"> Il ya un probleme avec le username ou le password</p>
                 </form>
             </div>
         </div>

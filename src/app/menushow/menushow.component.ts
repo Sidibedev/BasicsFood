@@ -14,7 +14,7 @@ export class MenushowComponent implements OnInit {
 
   ngOnInit() {
 
-        this.dataService.fetchMenus().subscribe(
+        this.dataService.showmenu().subscribe(
           (data) => {
 
             this.menus = data

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataServiceService } from 'app/data-service.service';
 import { Router } from '@angular/router';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +15,9 @@ export class LoginComponent implements OnInit {
     focus;
     focus1;
     TypeForm: FormGroup;
+    authenticated:boolean=null
 
-    constructor(private formBuilder: FormBuilder , private dataService:DataServiceService , private router:Router) { }
+    constructor(private formBuilder: FormBuilder , private dataService:DataServiceService , private router:Router , private http:HttpClient) { }
 
     ngOnInit() {
         this.initForm();
@@ -45,8 +47,30 @@ export class LoginComponent implements OnInit {
 
     onSubmitForm() {
         const formValue = this.TypeForm.value;
-        console.log(formValue['password'])
         
+        const headers = new HttpHeaders(formValue['password'] && formValue['username'] ? {
+          authorization : 'Basic ' + btoa(formValue['username']+ ':' + formValue['password'])
+      } : {});
+      const token = 'Basic ' + btoa(formValue['username']+ ':' + formValue['password'])
+
+      try {
+        this.http.get('http://localhost:8080/api/typeplat', {headers: headers}).subscribe(response => {
+        if (!response['status']) {
+            // stocker le token dans le localStorage 
+            localStorage.setItem('token', token);
+            
+            //naviguer vers la route principale.
+            this.router.navigate(['/listmenu'])
+            window.location.reload();
+            
+        }
+        
+    });
+        
+      } catch (error) {
+        alert(error)
+      }
+      
        
        
       }

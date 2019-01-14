@@ -10,10 +10,10 @@
            <div ngbDropdownMenu>
            
              <a class="dropdown-item" [routerLink]="['/membres']" >Membres du groupe</a>
-             <a class="dropdown-item" [routerLink]="['/listmenu']" >Gestion du menu</a>
-             <a class="dropdown-item" [routerLink]="['/listtypeplat']" >Gestion des types</a>
-             <a class="dropdown-item" [routerLink]="['/listuser']" >Gestion des users</a>
-             <a class="dropdown-item" [routerLink]="['/stats']" >Statistiques</a>
+             <a *ngIf="logged == true" class="dropdown-item" [routerLink]="['/listmenu']" >Gestion du menu</a>
+             <a *ngIf="logged == true" class="dropdown-item" [routerLink]="['/listtypeplat']" >Gestion des types</a>
+             <a *ngIf="logged == true" class="dropdown-item" [routerLink]="['/listuser']" >Gestion des users</a>
+             <a *ngIf="logged == true" class="dropdown-item" [routerLink]="['/stats']" >Statistiques</a>
              <!-- <a class="dropdown-item" href="#">Another action</a>
              <a class="dropdown-item" href="#">Something else here</a>
              <div class="dropdown-divider"></div>
@@ -36,12 +36,19 @@
         <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
               
-                <li class="nav-item">
-                    <a [routerLink]="['/login']" style="font-family:Comfortaa" class="nav-link btn btn-danger" >
+                <li *ngIf="logged == true"  class="nav-item">
+                    <button (click)="logout()" style="font-family:Comfortaa" class="nav-link btn btn-danger" >
                        
-                        <p>Deconnexion</p>
-                    </a>
+                        Deconnexion
+                    </button>
                 </li>
+                <li *ngIf="logged == false"  class="nav-item">
+                        <a [routerLink]="['/login']" style="font-family:Comfortaa" class="nav-link btn btn-danger" >
+                           
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    
                
             </ul>
         </div>
