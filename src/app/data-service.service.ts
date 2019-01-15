@@ -7,6 +7,7 @@ export class DataServiceService {
    public headers = new HttpHeaders({
     authorization : this.token
 } );
+public prefix = 'https://basics-food.herokuapp.com/api'
   constructor( private http : HttpClient) { 
  
   }
@@ -17,25 +18,25 @@ export class DataServiceService {
 
   
   fetchType() {
-    return this.http.get('http://localhost:8080/api/typeplat' , {headers: this.headers })
+    return this.http.get(`${this.prefix}/typeplat` , {headers: this.headers })
   }
 
   deleteType(id) {
-    return this.http.delete(`http://localhost:8080/api/typeplat/${id}` , {headers: this.headers })
+    return this.http.delete(`${this.prefix}/typeplat/${id}` , {headers: this.headers })
   }
 
   addType(type) {
     
-    return this.http.post('http://localhost:8080/api/typeplat' , type , {headers: this.headers })
+    return this.http.post(`${this.prefix}/typeplat` , type , {headers: this.headers })
   }
 
   updateType(id , type) {
     
-    return this.http.put(`http://localhost:8080/api/typeplat/${id}` ,type , {headers: this.headers }) 
+    return this.http.put(`${this.prefix}/typeplat/${id}` ,type , {headers: this.headers }) 
   }
 
   findTypeById(id) {
-    return this.http.get(`http://localhost:8080/api/typeplat/${id}` , {headers: this.headers })
+    return this.http.get(`${this.prefix}/typeplat/${id}` , {headers: this.headers })
   }
 
   // ==================================== End Types API
@@ -45,25 +46,25 @@ export class DataServiceService {
    // ==================================== USers API
 
     fetchUser() {
-      return this.http.get('http://localhost:8080/api/users' , {headers: this.headers })
+      return this.http.get(`${this.prefix}/users` ,{headers: this.headers })
     }
 
     deleteUser(id) {
-      return this.http.delete(`http://localhost:8080/api/users/${id}` , {headers: this.headers })
+      return this.http.delete(`${this.prefix}/users/${id}` , {headers: this.headers })
     }
     findUserById(id) {
-      return this.http.get(`http://localhost:8080/api/users/${id}` , {headers: this.headers })
+      return this.http.get(`${this.prefix}/users/${id}` , {headers: this.headers })
     }
     updateUser(id , username) {
       const data = {
         "username" : username
       }
-      return this.http.put(`http://localhost:8080/api/users/${id}` ,data , {headers: this.headers })
+      return this.http.put(`${this.prefix}/users/${id}` ,data , {headers: this.headers })
     }
 
     addUser(user) {
     
-      return this.http.post('http://localhost:8080/api/users' , user , {headers: this.headers })
+      return this.http.post(`${this.prefix}/users' ,${user}` , {headers: this.headers })
     }
   
 
@@ -76,25 +77,25 @@ export class DataServiceService {
 
     addMenu(menu) {
     
-        return this.http.post('http://localhost:8080/api/menus' , menu , {headers: this.headers })
+        return this.http.post(`${this.prefix}/menus' ,${menu}` , {headers: this.headers })
       }
 
     fetchMenus() {
-        return this.http.get('http://localhost:8080/api/menus' , {headers: this.headers })
+        return this.http.get(`${this.prefix}/menus` , {headers: this.headers })
       }
       deleteMenu(id) {
-        return this.http.delete(`http://localhost:8080/api/menus/${id}` , {headers: this.headers })
+        return this.http.delete(`${this.prefix}/menus/${id}` , {headers: this.headers })
       }
       updateMenu(id , menu) {
        
-        return this.http.put(`http://localhost:8080/api/menus/${id}` ,menu , {headers: this.headers })
+        return this.http.put(`${this.prefix}/menus/${id}` ,menu , {headers: this.headers })
       }
       findMenuById(id) {
-        return this.http.get(`http://localhost:8080/api/menus/${id}` , {headers: this.headers })
+        return this.http.get(`${this.prefix}/menus/${id}` , {headers: this.headers })
       }
 
       showmenu() {
-        return this.http.get('http://localhost:8080/api/showmenu')
+        return this.http.get(`${this.prefix}/showmenu`)
       }
 
       
@@ -105,11 +106,11 @@ export class DataServiceService {
 
      // ==================================== Stats API
      statsPlatType() {
-      return this.http.get('http://localhost:8080/api/menus/stats/types' , {headers: this.headers })
+      return this.http.get(`${this.prefix}/menus/stats/types` , {headers: this.headers })
     }
 
     statsPlatPrix() {
-      return this.http.get('http://localhost:8080/api/menus/stats/prix' , {headers: this.headers })
+      return this.http.get(`${this.prefix}/menus/stats/prix` , {headers: this.headers })
     }
 
 
