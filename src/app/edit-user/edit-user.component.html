@@ -34,9 +34,9 @@
                       <form  [formGroup]="TypeForm" class="form" (ngSubmit)="onSubmitForm()">
                               
                               <div class="content">
-                                <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group form-group-no-border input-lg" >
                                  
-                                    <input formControlName="username" type="text" class="form-control" value={{usertoupdate.username}} (focus)="focus=true" (blur)="focus=false" >
+                                    <input formControlName="username" type="text" class="form-control" value={{usertoupdate.username}} >
                                 </div>
 
                                
@@ -61,7 +61,7 @@
               
               <div class="copyright">
                   &copy;
-                {{data | date: 'yyyy'}},  Coded by
+                2019,  Coded by
                   <a href="https://www.creative-tim.com" target="_blank">Basics</a>.
               </div>
           </div>

@@ -31,6 +31,7 @@ export class AjoutUserComponent implements OnInit {
     if(formValue['password'] === formValue['confirpasswrod']) {
 
       let user = new User(formValue['username'] , formValue['password'])
+      console.log(user)
       this.dataService.addUser(user).subscribe(
       () => {
         this.router.navigate(['/listuser'])

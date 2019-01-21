@@ -10,7 +10,7 @@ import { DataServiceService } from 'app/data-service.service';
 })
 export class EditUserComponent implements OnInit {
 
-  usertoupdate =''
+  usertoupdate : any
   TypeForm: FormGroup;
   constructor( private router: Router , private route: ActivatedRoute , private dataService:DataServiceService , private formBuilder: FormBuilder) { }
 
@@ -25,7 +25,7 @@ export class EditUserComponent implements OnInit {
 
   initForm() {
     this.TypeForm = this.formBuilder.group({
-      username: '',
+      username:'',
     
     });
   }

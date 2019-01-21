@@ -5,11 +5,13 @@ import {HttpHeaders} from '@angular/common/http'
 export class DataServiceService {
    public token = localStorage.getItem('token')
    public headers = new HttpHeaders({
-    authorization : this.token
-} );
+    authorization : this.token});
+
 public prefix = 'https://basics-food.herokuapp.com/api'
   constructor( private http : HttpClient) { 
  
+    this.headers.set('Content-Type', 'application/json');
+    this.headers.set("Access-Control-Allow-Origin", "*");
   }
 
 
@@ -45,6 +47,7 @@ public prefix = 'https://basics-food.herokuapp.com/api'
 
    // ==================================== USers API
 
+   
     fetchUser() {
       return this.http.get(`${this.prefix}/users` ,{headers: this.headers })
     }
@@ -64,7 +67,7 @@ public prefix = 'https://basics-food.herokuapp.com/api'
 
     addUser(user) {
     
-      return this.http.post(`${this.prefix}/users' ,${user}` , {headers: this.headers })
+      return this.http.post(`${this.prefix}/users` , user ,{headers: this.headers })
     }
   
 
@@ -77,7 +80,7 @@ public prefix = 'https://basics-food.herokuapp.com/api'
 
     addMenu(menu) {
     
-        return this.http.post(`${this.prefix}/menus' ,${menu}` , {headers: this.headers })
+        return this.http.post(`${this.prefix}/menus` , menu ,{headers: this.headers})
       }
 
     fetchMenus() {

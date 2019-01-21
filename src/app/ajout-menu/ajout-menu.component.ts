@@ -57,6 +57,7 @@ export class AjoutMenuComponent implements OnInit {
     this.dataService.findTypeById(formValue['typeplat']).subscribe(
       (data) => {
         let menu = new Menu(formValue['nomplat'] , formValue['prix'] ,this.url , formValue['description'] ,data )
+    
         this.dataService.addMenu(menu).subscribe(
           () => {
             this.router.navigate(['/listmenu'])

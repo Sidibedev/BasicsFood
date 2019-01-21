@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
       const token = 'Basic ' + btoa(formValue['username']+ ':' + formValue['password'])
 
       try {
-        this.http.get('http://localhost:8080/api/typeplat', {headers: headers}).subscribe(response => {
+        this.http.get('https://basics-food.herokuapp.com/api/typeplat', {headers: headers}).subscribe(response => {
         if (!response['status']) {
             // stocker le token dans le localStorage 
             localStorage.setItem('token', token);

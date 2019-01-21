@@ -34,25 +34,25 @@
                         <form class="form" [formGroup]="TypeForm" class="form" (ngSubmit)="onSubmitForm()">
                                 
                                 <div class="content">
-                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+                                  <div class="input-group form-group-no-border input-lg" >
                                    
-                                      <input formControlName="nomplat" type="text" class="form-control" placeholder="Nom du plat..." (focus)="focus=true" (blur)="focus=false" >
+                                      <input formControlName="nomplat" type="text" class="form-control" placeholder="Nom du plat..."  >
                                   </div>
 
 
-                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                                  <div class="input-group form-group-no-border input-lg">
                                     
-                                      <input formControlName="prix" type="number" placeholder="Prix du plat..." class="form-control" (focus)="focus1=true" (blur)="focus1=false"/>
+                                      <input formControlName="prix" type="number" placeholder="Prix du plat..." class="form-control" />
                                   </div>
 
-                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                                  <div class="input-group form-group-no-border input-lg">
                                        
-                                          <input formControlName="photo"  (change)="readUrl($event)" type="file" placeholder="Une photo..." class="form-control" (focus)="focus1=true" (blur)="focus1=false"/>
-                                  </div>
+                                          <input formControlName="photo"  (change)="readUrl($event)" type="file" placeholder="Une photo..." class="form-control" />
+                                  </div><p style="font-size:10px">Note : taille requise 150 x 150</p>
 
-                                  <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                                  <div class="input-group form-group-no-border input-lg">
                                     
-                                         <select required formControlName="typeplat" class="form-control" (focus)="focus1=true" (blur)="focus1=false">
+                                         <select required formControlName="typeplat" class="form-control" >
                                                 <option value="{{type._id}}" *ngFor="let type of types">{{type.nom}}</option>
                                         </select>
                                                
@@ -83,7 +83,7 @@
                 
                 <div class="copyright">
                     &copy;
-                  {{data | date: 'yyyy'}},  Coded by
+                  2019 ,  Coded by
                     <a href="https://www.creative-tim.com" target="_blank">Basics</a>.
                 </div>
             </div>
