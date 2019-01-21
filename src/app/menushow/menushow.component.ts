@@ -10,6 +10,7 @@ import {DataServiceService} from '../data-service.service'
 
 export class MenushowComponent implements OnInit {
   menus:any
+  loading = true
   constructor(private dataService:DataServiceService) { }
 
   ngOnInit() {
@@ -18,7 +19,8 @@ export class MenushowComponent implements OnInit {
           (data) => {
 
             this.menus = data
-            console.log(this.menus)
+            this.loading = false
+            //console.log(this.menus)
 
           }
         )
